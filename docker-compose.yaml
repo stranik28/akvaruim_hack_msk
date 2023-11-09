@@ -6,15 +6,13 @@ services:
     restart: on-failure
     env_file:
       - .env
-    ports:
-      - "5430:5432"
   server:
     build: .
     restart: on-failure
     env_file:
       - .env
     ports:
-      - "8000:8000"
+      - "8777:8000"
     depends_on:
       - db
     volumes:

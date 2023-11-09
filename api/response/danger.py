@@ -84,7 +84,7 @@ class DangerListResponseFactory:
             address=danger.address,
             reaction="In developing...",
             date=danger.created_at,
-            status=danger.status or 0
+            status=danger.status if danger.status is not None else 0
         )
 
     @classmethod

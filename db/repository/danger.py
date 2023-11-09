@@ -1,7 +1,7 @@
 import datetime
 from typing import Optional
 
-from sqlalchemy import select, desc, and_
+from sqlalchemy import select, desc, and_, update
 from sqlalchemy.orm import joinedload
 
 from db.models.danger import DBDanger
@@ -55,6 +55,7 @@ class DangerRepository(BaseRepository):
         return await self.all_ones(query)
 
     async def update_status(self, id_, status_id):
+        print(status_id)
         query = (
             select(DBDanger)
             .select_from(DBDanger)
@@ -63,9 +64,16 @@ class DangerRepository(BaseRepository):
             )
         )
 
-        danger = await self.one_val(query)
+        data = await self.one_val(query)
 
-        danger.status_id = status_id
+        data.status = status_id
+
+        stmt = (
+            update(DBDanger).
+            where(DBDanger.id == id_)). \
+            values({'status': status_id})
+
+        await self.execute(stmt)
 
         await self._session.commit()
-
+        await self._session.flush(data)
