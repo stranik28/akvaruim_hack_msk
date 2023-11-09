@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+SQLAlchemy
+psycopg2-binary
+asyncpg
+alembic
+python-dotenv
+python-jose
+python-multipart
