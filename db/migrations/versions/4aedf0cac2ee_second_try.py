@@ -23,33 +23,33 @@ def upgrade():
     op.create_unique_constraint(op.f('uq_danger_id'), 'danger', ['id'])
     op.create_unique_constraint(op.f('uq_human_id'), 'human', ['id'])
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('John', 'Doe', 'Smith', 'https://example.com/john_doe.jpg', 2);
+    VALUES ('John', 'Doe', 'Smith', 'https://sun9-12.userapi.com/impg/ErezAdb5OyvwtD4lXO1yqkUx5CQw5VhkXIfKnw/ZtYrso5rPZA.jpg?size=1280x855&quality=96&sign=51d3ad6a0bcc8308b9ae827781d43cef&type=album', 2);
     ''')
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('Alice', 'Johnson', 'Marie', 'https://example.com/alice_johnson.jpg', 1);
+    VALUES ('Alice', 'Johnson', 'Marie', 'https://sun9-55.userapi.com/impg/mTZXJ_lmgSQJS6wSUr0fBH_j7poHO8HRPF9BEw/CCFD4xKwLbM.jpg?size=1280x1280&quality=95&sign=eada43c73caaac026d0c9193140b8fa8&type=album', 1);
     ''')
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('Sarah', 'Smith', 'Anne', 'https://example.com/sarah_smith.jpg', 3);
+    VALUES ('Sarah', 'Smith', 'Anne', 'https://sun9-20.userapi.com/impf/c836333/v836333001/31189/8To0r3d-6iQ.jpg?size=968x1080&quality=96&sign=f52327ecbbdc4365cb1897eb50d56f0b&type=album', 3);
     ''')
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('Michael', 'Brown', 'James', 'https://example.com/michael_brown.jpg', 1);
+    VALUES ('Michael', 'Brown', 'James', 'https://sun9-7.userapi.com/impg/3ET927bFG8TDUpHf8MGQ4jJd4dCdDTaUe2T38A/5OjDdgYLRrc.jpg?size=1280x1280&quality=95&sign=8d9fafc745645cb46ad4f48f32c692c4&type=album', 1);
     ''')
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('Emily', 'Davis', 'Grace', 'https://example.com/emily_davis.jpg', 2);
+    VALUES ('Emily', 'Davis', 'Grace', 'https://sun9-40.userapi.com/impf/qjBwlwWRPcK_41NMXQOBHvRzUcgE8BgRZpLwEw/bdp5jXAUSM4.jpg?size=852x853&quality=96&sign=6e9322deb8befd7b2b6f4f2bc6be9cab&type=album', 2);
     ''')
     op.execute('''INSERT INTO human (first_name, last_name, middle_name, photo, danger_level)
-    VALUES ('David', 'Miller', 'John', 'https://example.com/david_miller.jpg', 1);
+    VALUES ('David', 'Miller', 'John', 'https://sun9-17.userapi.com/impg/V77bmu82m-xsuxvwnmGCQc5BZFwp_sD0juQMAw/8CU8wr2i918.jpg?size=1280x853&quality=95&sign=f1de6e02a2d5118ad1506d7ac3c385b4&type=album', 1);
     ''')
 
     op.execute('''
             INSERT INTO danger (name, description, shots, suspenders, danger_level, address)
-            VALUES ('Explosion', 'Powerful explosion with fire and smoke', ARRAY['https://example.com/explosion.jpg'], ARRAY[1, 3, 5], 5,
+            VALUES ('Explosion', 'Powerful explosion with fire and smoke', ARRAY['https://kubrick.htvapps.com/vidthumb/2bebd8d7-9c53-4d2c-ae84-9958f8115b7e/2bebd8d7-9c53-4d2c-ae84-9958f8115b7e_image.jpg?crop=0.592xw:0.591xh;0.225xw,0.125xh&resize=1200:*'], ARRAY[1, 3, 5], 5,
             'Бабочкина 5')
         ''')
 
     op.execute("""
             INSERT INTO danger (name, description, shots, suspenders, danger_level, address)
-            VALUES ('Chemical Spill', 'Hazardous chemical spill', ARRAY['https://example.com/chemical_spill.jpg'], ARRAY[2, 4, 6], 4,
+            VALUES ('Chemical Spill', 'Hazardous chemical spill', ARRAY['https://video-images.vice.com/articles/5fd8eb022666c9009de791e3/lede/1608054498616-screenshot-2020-12-14-at-60256-pm.png'], ARRAY[2, 4, 6], 4,
             'Бабочкина 7')
         """)
     # ### end Alembic commands ###

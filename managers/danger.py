@@ -19,3 +19,7 @@ class DangerManager:
     @staticmethod
     async def get_dangers(session: AsyncSession):
         return await DangerRepository(session).get_all()
+
+    @staticmethod
+    async def update_danger_status(id_, status_id, session):
+        return await DangerRepository(session).update_status(id_=id_, status_id=status_id)

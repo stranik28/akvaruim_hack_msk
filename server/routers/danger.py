@@ -10,6 +10,15 @@ from server.depends import get_session
 router = APIRouter(prefix='/danger')
 
 
+@router.put('/update_status/{id}')
+async def update_danger(
+        id_: int,
+        status_id: int,
+        session: AsyncSession = Depends(get_session)
+):
+    await DangerManager.update_danger_status(id_=id_, status_id=status_id, session=session)
+
+
 @router.get("/all")
 async def get_dangers(
         session: AsyncSession = Depends(get_session)
@@ -27,6 +36,3 @@ async def get_danger(
     danger = await DangerManager.get_danger(id_=id_, session=session)
 
     return DangerResponseFactory.from_models(danger[0], danger[1], danger[2])
-
-
-

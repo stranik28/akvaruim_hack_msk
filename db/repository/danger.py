@@ -54,3 +54,18 @@ class DangerRepository(BaseRepository):
 
         return await self.all_ones(query)
 
+    async def update_status(self, id_, status_id):
+        query = (
+            select(DBDanger)
+            .select_from(DBDanger)
+            .where(
+                DBDanger.id == id_
+            )
+        )
+
+        danger = await self.one_val(query)
+
+        danger.status_id = status_id
+
+        await self._session.commit()
+
